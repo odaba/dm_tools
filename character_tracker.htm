@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ /* character_tracker.htm
+  * Frankie
+  * version 1.16
+  * 25Oct2013
+
+  * 1.16
+  * refactor div for char_status, added carrying capacity
+  * refactor div for char_abil
+  * refactor div for char_vitals
+  * refactor div for char_who
+  * remove chunks due to 'data_editable'
+
+  * 1.14
+  * move a bunch of stuff from .htm script to onload function in .js file
+
+  * 1.8
+  * move loading of glossary items to the bottom of the page
+
+  * 1.6
+  * fixed up to work with char_obj.js 1.6
+  * removed init()
+
+  * 1.2
+  * added </html
+  * added general.js
+  * split <init opject> from adding info (init will be when we put in ruleset stuff from the DB, addInfo we will add particular character info)
+  */ -->
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="jquery.csv-0.71.js"></script>
+  <script type="text/javascript" src="general.js"></script>
+  <script type="text/javascript" src="glossary_objects.js"></script>
+  <script type="text/javascript" src="character_objects.js"></script>
+  <script type="text/javascript" src="character_tracker.js"></script>
+  <script type="text/javascript" src="dice_roller_functions.js"></script>
+  <link href="character_tracker.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div><span id="char_who" onclick="$('#data_who').show();">Basic ID</span>
+  <div class="hidden data_editable" id="data_who">
+    Name: <span id="char_who_name"></span><br>
+    Level: <span id="char_who_level"></span><br>
+    Levelup History: <span id="char_level_history"></span><br>
+    <input type="button" value="Done" onclick="synch('who'); $('#data_who').hide();" />
+    <input type="button" value="Cancel" onclick="synch(); $('#data_who').hide();" />
+  </div>
+</div>
+<div><span id="char_vitals" onclick="$('#data_vitals').show();">Vitals</span>
+  <div class="hidden data_editable" id="data_vitals">
+    Alignment: <span id="char_vitals_align"></span><br>
+    Size: <span id="char_vitals_size"></span><br>
+    Type: <span id="char_vitals_type"></span><br>
+    Story: <span id="char_vitals_desc"></span><br>
+    <img id="char_vitals_pic" src="" alt=""><br>
+    <input type="button" value="Done" onclick="synch('vitals'); $('#data_vitals').hide();" />
+    <input type="button" value="Cancel" onclick="synch(); $('#data_vitals').hide();" />
+  </div>
+</div>
+<div><span id="char_abil" onclick="$('#data_abil').show();">Abilities</span>
+  <div class="hidden data_editable" id="data_abil">
+    Str: <span id="char_abil_str"></span><br>
+    Dex: <span id="char_abil_dex"></span><br>
+    Con: <span id="char_abil_con"></span><br>
+    Int: <span id="char_abil_int"></span><br>
+    Wis: <span id="char_abil_wis"></span><br>
+    Cha: <span id="char_abil_cha"></span><br>
+    <input type="button" value="Done" onclick="synch('abil'); $('#data_abil').hide();" />
+    <input type="button" value="Cancel" onclick="synch(); $('#data_abil').hide();" />
+  </div>
+</div>
+<div class="float_right"><span id="char_status" onclick="$('#data_status').show();">Status</span>
+  <div class="hidden data_editable" id="data_status">
+    Current hp: <span id="char_status_hp"></span><br>
+    Conditions: <span id="char_status_conditions"></span><br>
+    Carry Capacity: <span id="char_status_carry"></span><br>
+    <input type="button" value="Done" onclick="synch('status'); $('#data_status').hide();" />
+    <input type="button" value="Cancel" onclick="synch(); $('#data_status').hide();" />
+  </div>
+</div>
+<div class="float_right"><span id="char_defense" onclick="$('#data_defense').show();">Defense</span>
+  <div class="hidden data_editable" id="data_defense">
+    AC: <span id="char_defense_ac"></span><br>
+    Fort: +<span id="char_defense_fort"></span><br>
+    Refl: +<span id="char_defense_refl"></span><br>
+    Will: +<span id="char_defense_will"></span><br>
+    <input type="button" value="Done" onclick="synch('defense'); $('#data_defense').hide();" />
+    <input type="button" value="Cancel" onclick="synch(); $('#data_defense').hide();" />
+  </div>
+</div>
+<div class="float_left"><span id="char_offense" onclick="$('#data_offense').show();">Offense</span>
+  <div class="hidden data_editable" id="data_offense">
+    Single Attack: <span id="char_offense_single"></span><br>
+    Full Attack: <span id="char_offense_full"></span><br>
+    Ranged Attack: <span id="char_offense_ranged"></span><br>
+    Special Attack: <span id="char_offense_special"></span><br>
+    <input type="button" value="Done" onclick="synch('offense'); $('#data_offense').hide();" />
+    <input type="button" value="Cancel" onclick="synch(); $('#data_offense').hide();" />
+  </div>
+</div>
+<!-- 
+<div class="float_right">
+  CMB +<span id="char_cmb"></span>
+  / CMD +<span id="char_cmd"></span>
+  <!-- (click for full breakdown, including bab) /->
+  <div class="hidden">wrapper for full combat maneuvers</div>
+</div>
+-->
+<div class="float_right">Skills: <br>
+  <span id="char_skills"></span>
+  <!-- (click to see all, choose which are shown) -->
+  <div class="hidden">wrapper for full skills</div>
+</div>
+<div style="clear: both;">menu: gear, actions</div>
+<input type="button" value="update" onclick="update_page(char); gid('assign_stats').style.display = gid('data_entry').style.display = 'none';">
+<input type="button" value="clear" onclick="update_page(clear_char); gid('assign_stats').style.display = gid('data_entry').style.display = 'none';">
+<input type="button" value="data entry" onclick="gid('data_entry').style.display = 'block';">
+<!-- <input type="button" value="roll stats" onclick="gid('assign_stats').style.display = 'block';"> -->
+<hr>
+<div id="data_entry" style="display: none;">
+<div class="data_line"><div class="data_label">XP</div><div class="data_editable"><span id='enter_xp' onblur="char.descript.xp = this.innerHTML; update_page(char);"></span></div></div>
+
+<div class="data_line"><div class="data_label">Skills (Ranks)</div><div class="data_editable"></div></div>
+<div class="data_line"><div class="data_label">Gear</div><div class="data_editable"></div></div>
+
+<div class="data_line"><div class="data_label">(i) Stat Rolls (Re-roll?)</div><div class="data_info"><span id='enter_stat_rolls'></span></div></div>
+<div class="data_line"><div class="data_label">Ability Scores (Base)</div><div class="data_editable"></div></div>
+<div class="data_line"><div class="data_label">(i) Hp (Dice Rolls, roll new?)</div><div class="data_info"><span id='enter_hp_rolls'></span></div></div>
+<div class="data_line"><div class="data_label">** Fortitude (Base)</div><div class="data_editable"></div></div>
+<div class="data_line"><div class="data_label">** Reflex (Base)</div><div class="data_editable"></div></div>
+<div class="data_line"><div class="data_label">** Will (Base)</div><div class="data_editable"></div></div>
+<div class="data_line"><div class="data_label">** Base Attack</div><div class="data_editable"></div></div>
+<div class="data_line"><div class="data_label">(i) CMB</div><div class="data_info"><span id='enter_cmb'></span></div></div>
+<div class="data_line"><div class="data_label">(i) CMD</div><div class="data_info"><span id='enter_cmd'></span></div></div>
+
+</div>
+
+</body>
+</html>

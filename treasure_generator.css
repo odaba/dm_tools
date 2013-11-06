@@ -1,0 +1,15 @@
+ /* treasure_generator.css
+  * Frankie
+  * version 1.12
+  * 28May2013
+
+  * 1.12
+  * added .divbox
+  * default value for div
+  * added .hidden
+  */
+
+div { display: inline; }
+.divbox { display: block; }
+
+.hidden { display: none; }

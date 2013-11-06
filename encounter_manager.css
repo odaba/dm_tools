@@ -1,0 +1,65 @@
+ /* encounter_manager.css
+  * Frankie
+  * version 1.16
+  * 25Oct2013
+
+  * 1.16
+  * comment out specialability_name and specialability_description (unused)
+  * remove s_b_info and s_b_description (unused)
+  * remove width from s_b_title and s_b_label
+  * change style for div to div.inline to avoid disrupting code later on
+  * add styles for the statblock code
+
+  * 1.8
+  * add styles to div, table
+  */
+
+div.inline { display: inline; }
+table { border-collapse: collapse; }
+table, td, th { border: thin solid black; }
+
+.hidden { display: none; }
+.popup_floater {
+  border: thin solid black;
+  position: relative;
+  float: right;
+  max-width: 45%;
+}
+
+  .s_b_title {
+    background-color: rgb(207,226,243);
+    font-variant: small-caps;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 0 3px;
+    font-weight: bold;
+  }
+  .s_b_label {
+    border-top: 1px solid rgb(0,0,0);
+    border-bottom: 1px solid rgb(0,0,0);
+    padding-left: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: medium;
+    font-weight: bold;
+  }
+  .s_b_block {
+    font-size: medium;
+  }
+  .stat_line {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+    text-indent: -20px;
+  }
+/*
+  .specialability_name {
+    background-color:rgb(207,226,243);
+    padding-left: 3px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  .specialability_description {
+    margin-left: 20px;
+  }
+*/

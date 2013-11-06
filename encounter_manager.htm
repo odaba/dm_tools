@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ /* encounter_manager.htm
+  * Frankie
+  * version 1.16
+  * 25Oct2013
+
+  * 1.16
+  * remove old creature_statblock
+  * change "group size" divs to add class="inline"
+  * add div hook for new statblock js code
+  * indent existing statblock html to make it easy to find
+  * remove big block of non-printing html notes
+
+  * 1.10
+  * moved defaults for environment lists to data definition in .js file
+  * give onchange to environments lists
+  * re-work the environments list
+  * added synch() hint
+  * add monster_qty field
+
+  * 1.8
+  * create a 'loading' div
+  * clean up script being executed at the bottom of the page
+  * create popup for full creature statblock
+  * pop random monster into init tracker
+  * condense _page_data <=> dom functions into 'synch()'
+  * setup to filter random monsters for environment
+
+  * 1.2
+  * filtering random monsters for CR
+  * working on getting random monsters
+  */
+ -->
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="jquery.csv-0.71.js"></script>
+  <script type="text/javascript" src="sorttable.js"></script>
+  <script type="text/javascript" src="general.js"></script>
+  <script type="text/javascript" src="glossary_objects.js"></script>
+  <script type="text/javascript" src="encounter_manager.js"></script>
+  <script type="text/javascript" src="dice_roller_functions.js"></script>
+  <link href="encounter_manager.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id='loading'>Loading Data, please be patient</div>
+<div><p>Build an Encounter</p>
+<div class="inline">Group size: <input id='p_size' type='text' onchange='_page_data.p_size = Number(this.value); synch("p_size");'></div>
+  <div id='p_lvls' class="inline"></div>
+  APL: <span id='p_apl'></span><br>
+Encounter Level: <input id='chal_lvl' type='text' onchange='_page_data.chal_lvl = Number(this.value); synch("chal_lvl");'>
+  <span id='chal_difficulty'></span>;
+  XP Budget: <span id='chal_xp_budget'></span><br>
+Encounter has an environment; random environment:
+<select id='environ_terrain' onchange='_page_data.environ_terrain = String(this.value); synch("environ_terrain");'>
+<option value='any'>Any Environ.</option>
+<option value='aquatic'>Aquatic</option>
+<option value='desert'>Desert</option>
+<option value='dungeon'>Dungeon</option>
+<option value='forest'>Forest</option>
+<option value='hills'>Hills</option>
+<option value='marsh'>Marsh</option>
+<option value='mountains'>Mountains</option>
+<option value='plains'>Plains</option>
+<option value='underground'>Underground</option>
+<option value='urban'>Urban</option>
+</select>
+<select id='environ_temp' onchange='_page_data.environ_temp = String(this.value); synch("environ_temp");'>
+<option value='any'>Any Temp.</option>
+<option value='cold'>Cold</option>
+<option value='temperate'>Temperate</option>
+<option value='warm'>Warm</option>
+</select>
+<select id='environ_plane' onchange='_page_data.environ_plane = String(this.value); synch("environ_plane");'>
+<option value='any'>Any Plane</option>
+<option value='material'>Material</option>
+<option value='abaddon'>Abaddon</option>
+<option value='abyss'>Abyss</option>
+<option value='elysium'>Elysium</option>
+<option value='heaven'>Heaven</option>
+<option value='hell'>Hell</option>
+<option value='air'>Air</option>
+<option value='earth'>Earth</option>
+<option value='fire'>Fire</option>
+<option value='water'>Water</option>
+</select>(<span id='monster_qty'></span> monsters)<br>
+<input type='button' value='Random Monster' onclick='get_random_monster();'>
+Monsters: <ul id='monster_list'></ul>
+<input type='button' value='Clear Monsters' onclick='$("#monster_list").empty();'>
+</div>
+<div id="sb_wrapper" class="hidden popup_floater"></div>
+<div><p>Tracking for an Encounter</p>
+<table id='track_table' class='sortable'>
+<tr id='track_row_head'><th></th><th class='sorttable_numeric'>init</th><th>Name</th><th>hp</th><th>AC</th><th>Perception</th></tr>
+</table>
+</div>
+</body>
+</html>

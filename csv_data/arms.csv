@@ -1,0 +1,90 @@
+"training","encumbrance","name","cost","dmg_S","dmg_M","crit","range","weight","dmg_type","special"
+"Simple","Unarmed Attacks","Gauntlet",2,"1d2","1d3","x2",,1,"B",
+"Simple","Unarmed Attacks","Unarmed strike",,"1d2","1d3","x2",,,"B","nonlethal"
+"Simple","Light Melee","Dagger",2,"1d3","1d4","19-20/x2",10,1,"P or S",
+"Simple","Light Melee","Dagger, punching",2,"1d3","1d4","x3",,1,"P",
+"Simple","Light Melee","Gauntlet, spiked",5,"1d3","1d4","x2",,1,"P",
+"Simple","Light Melee","Mace, light",5,"1d4","1d6","x2",,4,"B",
+"Simple","Light Melee","Sickle",6,"1d4","1d6","x2",,2,"S","trip"
+"Simple","One-Handed Melee","Club",,"1d4","1d6","x2",10,3,"B",
+"Simple","One-Handed Melee","Mace, heavy",12,"1d6","1d8","x2",,8,"B",
+"Simple","One-Handed Melee","Morningstar",8,"1d6","1d8","x2",,6,"B and P",
+"Simple","One-Handed Melee","Shortspear",1,"1d4","1d6","x2",20,3,"P",
+"Simple","Two-Handed Melee","Longspear",5,"1d6","1d8","x3",,9,"P","brace, reach"
+"Simple","Two-Handed Melee","Quarterstaff",,"1d4/1d4","1d6/1d6","x2",,4,"B","double, monk"
+"Simple","Two-Handed Melee","Spear",2,"1d6","1d8","x3",20,6,"P","brace"
+"Simple","Ranged","Blowgun",2,1,"1d2","x2",20,1,"P",
+"Simple","Ranged","Darts, blowgun (10)",0.5,,,,,,,
+"Simple","Ranged","Crossbow, heavy",50,"1d8","1d10","19-20/x2",120,8,"P",
+"Simple","Ranged","Bolts, crossbow (10)",1,,,,,1,,
+"Simple","Ranged","Crossbow, light",35,"1d6","1d8","19-20/x2",80,4,"P",
+"Simple","Ranged","Bolts, crossbow (10)",1,,,,,1,,
+"Simple","Ranged","Dart",0.5,"1d3","1d4","x2",20,0.5,"P",
+"Simple","Ranged","Javelin",1,"1d4","1d6","x2",30,2,"P",
+"Simple","Ranged","Sling",,"1d3","1d4","x2",50,,"B",
+"Simple","Ranged","Bullets, sling (10)",0.1,,,,,5,,
+"martial","Light Melee","Axe, throwing",8,"1d4","1d6","x2",10,2,"S",
+"martial","Light Melee","Hammer, light",1,"1d3","1d4","x2",20,2,"B",
+"martial","Light Melee","Handaxe",6,"1d4","1d6","x3",,3,"S",
+"martial","Light Melee","Kukri",8,"1d3","1d4","18-20/x2",,2,"S",
+"martial","Light Melee","Pick, light",4,"1d3","1d4","x4",,3,"P",
+"martial","Light Melee","Sap",1,"1d4","1d6","x2",,2,"B","nonlethal"
+"martial","Light Melee","Shield, light","special","1d2","1d3","x2",,"special","B",
+"martial","Light Melee","Spiked armor","special","1d4","1d6","x2",,"special","P",
+"martial","Light Melee","Spiked shield, light","special","1d3","1d4","x2",,"special","P",
+"martial","Light Melee","Starknife",24,"1d3","1d4","x3",20,3,"P",
+"martial","Light Melee","Sword, short",10,"1d4","1d6","19-20/x2",,2,"P",
+"martial","One-Handed Melee","Battleaxe",10,"1d6","1d8","x3",,6,"S",
+"martial","One-Handed Melee","Flail",8,"1d6","1d8","x2",,5,"B","disarm, trip"
+"martial","One-Handed Melee","Longsword",15,"1d6","1d8","19-20/x2",,4,"S",
+"martial","One-Handed Melee","Pick, heavy",8,"1d4","1d6","x4",,6,"P",
+"martial","One-Handed Melee","Rapier",20,"1d4","1d6","18-20/x2",,2,"P",
+"martial","One-Handed Melee","Scimitar",15,"1d4","1d6","18-20/x2",,4,"S",
+"martial","One-Handed Melee","Shield, heavy","special","1d3","1d4","x2",,"special","B",
+"martial","One-Handed Melee","Spiked shield, heavy","special","1d4","1d6","x2",,"special","P",
+"martial","One-Handed Melee","Trident",15,"1d6","1d8","x2",10,4,"P","brace"
+"martial","One-Handed Melee","Warhammer",12,"1d6","1d8","x3",,5,"B",
+"martial","Two-Handed Melee","Falchion",75,"1d6","2d4","18-20/x2",,8,"S",
+"martial","Two-Handed Melee","Glaive",8,"1d8","1d10","x3",,10,"S","reach"
+"martial","Two-Handed Melee","Greataxe",20,"1d10","1d12","x3",,12,"S",
+"martial","Two-Handed Melee","Greatclub",5,"1d8","1d10","x2",,8,"B",
+"martial","Two-Handed Melee","Flail, heavy",15,"1d8","1d10","19-20/x2",,10,"B","disarm, trip"
+"martial","Two-Handed Melee","Greatsword",50,"1d10","2d6","19-20/x2",,8,"S",
+"martial","Two-Handed Melee","Guisarme",9,"1d6","2d4","x3",,12,"S","reach, trip"
+"martial","Two-Handed Melee","Halberd",10,"1d8","1d10","x3",,12,"P or S","brace, trip"
+"martial","Two-Handed Melee","Lance",10,"1d6","1d8","x3",,10,"P","reach"
+"martial","Two-Handed Melee","Ranseur",10,"1d6","2d4","x3",,12,"P","disarm, reach"
+"martial","Two-Handed Melee","Scythe",18,"1d6","2d4","x4",,10,"P or S","trip"
+"martial","Ranged","Longbow",75,"1d6","1d8","x3",100,3,"P",
+"martial","Ranged","Arrows (20)",1,,,,,3,,
+"martial","Ranged","Longbow, composite",100,"1d6","1d8","x3",110,3,"P",
+"martial","Ranged","Arrows (20)",1,,,,,3,,
+"martial","Ranged","Shortbow",30,"1d4","1d6","x3",60,2,"P",
+"martial","Ranged","Arrows (20)",1,,,,,3,,
+"martial","Ranged","Shortbow, composite",75,"1d4","1d6","x3",70,2,"P",
+"martial","Ranged","Arrows (20)",1,,,,,3,,
+"Exotic","Light Melee","Kama",2,"1d4","1d6","x2",,2,"S","monk, trip"
+"Exotic","Light Melee","Nunchaku",2,"1d4","1d6","x2",,2,"B","disarm, monk"
+"Exotic","Light Melee","Sai",1,"1d3","1d4","x2",,1,"B","disarm, monk"
+"Exotic","Light Melee","Siangham",3,"1d4","1d6","x2",,1,"P","monk"
+"Exotic","One-Handed Melee","Sword, bastard",35,"1d8","1d10","19-20/x2",,6,"S",
+"Exotic","One-Handed Melee","Waraxe, dwarven",30,"1d8","1d10","x3",,8,"S",
+"Exotic","One-Handed Melee","Whip",1,"1d2","1d3","x2",,2,"S","disarm, nonlethal, reach, trip"
+"Exotic","Two-Handed Melee","Axe, orc double",60,"1d6/1d6","1d8/1d8","x3",,15,"S","double"
+"Exotic","Two-Handed Melee","Chain, spiked",25,"1d6","2d4","x2",,10,"P","disarm, trip"
+"Exotic","Two-Handed Melee","Curve blade, elven",80,"1d8","1d10","18-20/x2",,7,"S",
+"Exotic","Two-Handed Melee","Flail, dire",90,"1d6/1d6","1d8/1d8","x2",,10,"B","disarm, double, trip"
+"Exotic","Two-Handed Melee","Hammer, gnome hooked",20,"1d6/1d4","1d8/1d6","x3/x4",,6,"B or P","double, trip"
+"Exotic","Two-Handed Melee","Sword, two-bladed",100,"1d6/1d6","1d8/1d8","19-20/x2",,10,"S","double"
+"Exotic","Two-Handed Melee","Urgrosh, dwarven",50,"1d6/1d4","1d8/1d6","x3",,12,"P or S","brace, double"
+"Exotic","Ranged","Bolas",5,"1d3","1d4","x2",10,2,"B","nonlethal, trip"
+"Exotic","Ranged","Crossbow, hand",100,"1d3","1d4","19-20/x2",30,2,"P",
+"Exotic","Ranged","Bolts (10)",1,,,,,1,,
+"Exotic","Ranged","Crossbow, repeating heavy",400,"1d8","1d10","19-20/x2",120,12,"P",
+"Exotic","Ranged","Bolts (5)",1,,,,,1,,
+"Exotic","Ranged","Crossbow, repeating light",250,"1d6","1d8","19-20/x2",80,6,"P",
+"Exotic","Ranged","Bolts (5)",1,,,,,1,,
+"Exotic","Ranged","Net",20,,,,10,6,,
+"Exotic","Ranged","Shuriken (5)",1,1,"1d2","x2",10,0.5,"P","monk"
+"Exotic","Ranged","Sling staff, halfling",20,"1d6","1d8","x3",80,3,"B",
+"Exotic","Ranged","Bullets, sling (10)",0.1,,,,,5,,

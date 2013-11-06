@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+ /* treasure_generator.htm
+  * Frankie
+  * version 1.12
+  * 28May2013
+
+  * 1.12
+  * move default values to _page_data, use synch() to update
+  * move page_data to **.js
+  * add loading div
+  * move ajax reqs to **.js
+
+  * 1.8
+  * move loading of glossary items to the bottom of the page
+
+  * 1.2
+  * added a bunch of stuff, including addRandomItem()
+  */ -->
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="jquery.csv-0.71.js"></script>
+  <script type="text/javascript" src="general.js"></script>
+  <script type="text/javascript" src="glossary_objects.js"></script>
+  <script type="text/javascript" src="treasure_generator.js"></script>
+  <script type="text/javascript" src="dice_roller_functions.js"></script>
+  <link href="treasure_generator.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--
+  //  TODO: several encounters in a bloc
+  //  TODO: choose party members and calculate the party level
+-->
+
+<div id='loading'>Loading Data, please be patient</div>
+<div class='divbox'>
+  <div>Treasure</div>
+  <div>Party size: <input id='p_size' type='text' onchange='_page_data.p_size = Number(this.value); synch();'></div>
+  <div>Party level: <input id='p_lvl' type='text' onchange='_page_data.p_lvl = Number(this.value); synch();'></div><br>
+  <div>Challenge Rating: <input id='chal_lvl' type='text' onchange='_page_data.chal_lvl = Number(this.value); synch();'></div>
+  <div>Wealth by level: <span id='note_wealth'></span></div>
+</div>
+<div class='divbox'>
+  <div>Budget</div>
+  <div>Rollover: <input id='t_roll' type='text' onchange='_page_data.t_roll = Number(this.value); synch();'></div>
+  <div>Encounter: <span id='t_val_target'></span></div>
+  <div>per character: <span id='t_per_target'></span></div>
+  <div>item max value: <span id='t_item_max' contenteditable='true' onblur='_page_data.t_item_max = Number(this.innerHTML);'></span></div>
+</div>
+<div class='divbox'>
+  <div>Included gear: </div>
+  <div>Running total: <span id='t_incl_total'></span></div>
+  <div>xTra to Roll over: <span id='t_new_roll'></span></div><br>
+  <div><ul id='t_incl_gear'></ul></div>
+  <div><input type="button" value="clear treasure" onclick='clearItems(); synch();'></div>
+</div>
+<div class='divbox'>
+  <div><input type="button" value="add random item" onclick='addRandomItem(); synch();'></div>
+  <div><input type="button" value="add full treasure" onclick='do { addRandomItem(); } while(_page_data.t_incl_total <= (_page_data.t_val_target * .9)); synch();'></div>
+</div>
+</body>
+</html>

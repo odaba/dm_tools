@@ -1,0 +1,37 @@
+"name","abrev","shown","ability","penalty","untrained"
+"Acrobatics","acrobatics",FALSE,"dex","ac",TRUE
+"Appraise","appraise",FALSE,"int",,TRUE
+"Bluff","bluff",FALSE,"cha",,TRUE
+"Climb","climb",FALSE,"str","ac",TRUE
+"Craft()","craft",FALSE,"int",,TRUE
+"Diplomacy","diplomacy",FALSE,"cha",,TRUE
+"Disable Device","dDevice",FALSE,"dex","ac",FALSE
+"Disguise","disguise",FALSE,"cha",,TRUE
+"Escape Artist","eArtist",FALSE,"dex","ac",TRUE
+"Fly","fly",FALSE,"dex","ac",TRUE
+"Handle Animal","hAnimal",FALSE,"cha",,FALSE
+"Heal","heal",FALSE,"wis",,TRUE
+"Intimidate","intimidate",FALSE,"cha",,TRUE
+"Knowledge(Arcana)","kArcana",FALSE,"int",,FALSE
+"Knowledge(Dungeoneering)","kDungeon",FALSE,"int",,FALSE
+"Knowledge(Engineering)","kEngine",FALSE,"int",,FALSE
+"Knowledge(Geography)","kGeography",FALSE,"int",,FALSE
+"Knowledge(History)","kHistory",FALSE,"int",,FALSE
+"Knowledge(Local)","kLocal",FALSE,"int",,FALSE
+"Knowledge(Nature)","kNature",FALSE,"int",,FALSE
+"Knowledge(Nobility)","kNobility",FALSE,"int",,FALSE
+"Knowledge(Planes)","kPlanes",FALSE,"int",,FALSE
+"Knowledge(Religion)","kReligion",FALSE,"int",,FALSE
+"Knowledge()","knowledge",FALSE,"int",,FALSE
+"Linguistics","linguistics",FALSE,"int",,FALSE
+"Perception","perception",TRUE,"wis",,TRUE
+"Perform()","perform",FALSE,"cha",,TRUE
+"Profession()","profession",FALSE,"wis",,FALSE
+"Ride","ride",FALSE,"dex","ac",TRUE
+"Sense Motive","sMotive",FALSE,"wis",,TRUE
+"Sleight of Hand","SoHand",FALSE,"dex","ac",FALSE
+"Spellcraft","spellcraft",FALSE,"int",,FALSE
+"Stealth","stealth",FALSE,"dex","ac",TRUE
+"Survival","survival",FALSE,"wis",,TRUE
+"Swim","swim",FALSE,"str","2ac",TRUE
+"Use Magic Device","UMD",FALSE,"cha",,FALSE

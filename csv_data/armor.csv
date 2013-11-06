@@ -1,0 +1,22 @@
+"encumbrance","name","cost","bonus","max_DEX","check","arcane_failure","speed_30ft","speed_20ft","weight"
+"Light armor","Padded",5,1,8,0,5,30,20,10
+"Light armor","Leather",10,2,6,0,10,30,20,15
+"Light armor","Studded leather",25,3,5,-1,15,30,20,20
+"Light armor","Chain shirt",100,4,4,-2,20,30,20,25
+"Medium armor","Hide",15,4,4,-3,20,20,15,25
+"Medium armor","Scale mail",50,5,3,-4,25,20,15,30
+"Medium armor","Chainmail",150,6,2,-5,30,20,15,40
+"Medium armor","Breastplate",200,6,3,-4,25,20,15,30
+"Heavy armor","Splint mail",200,7,0,-7,40,20,15,45
+"Heavy armor","Banded mail",250,7,1,-6,35,20,15,35
+"Heavy armor","Half-plate",600,8,0,-7,40,20,15,50
+"Heavy armor","Full plate",1500,9,1,-6,35,20,15,50
+"Shields","Buckler",15,1,,-1,5,,,5
+"Shields","Shield, light wooden",3,1,,-1,5,,,5
+"Shields","Shield, light steel",9,1,,-1,5,,,6
+"Shields","Shield, heavy wooden",7,2,,-2,15,,,10
+"Shields","Shield, heavy steel",20,2,,-2,15,,,15
+"Shields","Shield, tower",30,4,2,-10,50,,,45
+"Extras","Armor spikes",50,,,,,,,10
+"Extras","Gauntlet, locked",8,,,"special","n/a4",,,5
+"Extras","Shield spikes",10,,,,,,,5

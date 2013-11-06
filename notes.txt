@@ -1,0 +1,67 @@
+ /* notes.txt
+  * Frankie
+  * version 1.2
+  * 1Mar2013
+
+  * handled 2 TODO
+  * added/handled 1 bug
+  * added 1 question
+  */
+
+*** index:
+a wrapper and menu system
+it doesn't do anything itself, but shows what modules are installed
+-each module could be a seperate entity that can be run on its own
+-each module should have a part that can be polled: "stuff to show on the main screen"
+
+*** SRD reference:
+-keyword only search is free?
+-advanced search for categories (feat, spell, etc.) or books or whatever
+-keep history of topics viewed, searches, etc.
+
+*** account (free?):
+handles all account actions & settings
+-login / logout
+-saved files, character info, etc.
+-fees / payments (with history)
+-"credits" to spend on more modules (with history)
+-settings, eg. menu order, preferred modules, module settings
+
+*** dice roller:
+--// TODO: dice_roller(): make this an object definition
+-available to other modules for free?
+-make / save custom rolls costs extra?
+
+*** character tracker:
+--// BUG: need to instatiate skills before init skills
+--        need to init skills before creating char
+--        need to create char to instatiate skills
+  // TODO: stat_save_btn(): make this work with new abilities object in char
+  // TODO: make_tags_editable(): use jQuery
+--// TODO: skills(): list should go to another place to be updated by whatever ruleset we're using
+  // TODO: slots-retrieve: doublecheck that i exists in inventory
+  // TODO: slots-equip: if there was already something in that slot, mark it off in inventory (or into weapon1??)
+  // TODO: slots-equip: if it was already in that container, don't do anything further
+  // TODO: combat.recalc(): hint is currently unused, put in code for it
+  // TODO: combat.recalc(): bab should come from classes, not hardcoded
+  // TODO: defense.recalc(): hint is currently unused, put in code for it
+  // TODO: defense.recalc(): base saves should come from classes, not hardcoded
+  // TODO: Char-addinfo(): change each part to .addInfo and make the data arrays of objects here
+-builder is free?
+-levelup / saved characters is extra?
+
+*** treasure generator:
+  // QUESTION: how closely does wealth/level track xp/level & treasure/encounter
+
+*** encounter manager:
+-build random or custom encounters
+-save for later
+-track initiative (auto-roll for DM)
+-track hp, AC, perception, etc. for enemies (for DM rolls)
+-track hp, AC, perception, etc. for characters too (for secret rolls)
+
+*** spellbook manager:
+-spellbooks have optional name / description
+-cross-link with character tracker to subtract gold to write new spells
+-keep pages for 'spells wanted' as well as 'spells known'
+

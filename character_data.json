@@ -1,0 +1,61 @@
+[
+ /* character_data.json
+  * Frankie
+  * version 1.16
+  * 25Oct2013
+
+  * 1.16
+  * move test character data from character_tracker.js
+  */
+  {
+    name: "Ragnar", xp: 1300,
+    level: "Rogue 3",
+    align: "Chaotic",
+    size: "Med",
+    type: "humanoid(Human)",
+    stat_rolls: [18, 16, 16, 15, 13, 10],
+    abilities: { str: 10, dex: 18, con: 15, 'int': 16, wis: 13, cha: 16 },
+    skills: { // [shown, ranks]
+      bluff:      [true,6],
+      dDevice:    [true,2],
+      disguise:   [true,6],
+      dScript:    [false,1],
+      gInfo:      [false,6],
+      hAnimal:    [false,1],
+      hide:       [true,6],
+      kDungeon:   [false,1],
+      kLocal:     [false,1],
+      kNobility:  [false,1],
+      listen:     [true,6],
+      mSilent:    [true,6],
+      oLock:      [false,1],
+      proSailor:  [false,1],
+      proArtist:  [true,1],
+      search:     [false,6],
+      sMotive:    [true,6],
+      SoHand:     [false,1],
+      spot:       [true,6],
+      tumble:     [false,6],
+      UMD:        [false,3]
+    },
+    hp_rolls: [6, 3, 4],
+    bab: 1,
+    base_saves: { f:1, r:3, w:1 },
+    gear: [ // quantity, name, where, properties
+      [1, "morningstar",    "sheath",   {type: "weapon"}],
+      [1, "dagger",         "sheath",   {type: "weapon"}],
+      [4, "dagger",         "hidden",   {type: "weapon"}],
+      [1, "Rapier",         "weapon1",  {type: "weapon", mwk: true}],
+      [1, "light crossbow", "sheath",   {type: "weapon"}],
+      [20, "crossbow bolt", "sheath",   {type: "ammunition"}],
+      [1, "Chain shirt",    "body",     {type: "armor", mwk: true, category: "light", bonus: 4, maxDex: 4, check: 1, arcaneFailure: 20}],
+      [1, "Buckler",        "shield",   {type: "shield", mwk: true, bonus: 1, maxDex: "n", check: 0, arcaneFailure: 5}],
+      [1, "backpack",       "worn",     {type: "container"}],
+      [1, "adventures kit", "backpack", {}],
+      [1, "thieves tools",  "backpack", {}],
+      [1, "coinpurse",      "backpack", {type: "container"}],
+      [6, "gold",           "coinpurse", {}],
+      [1, "guard dog",      "", {}]
+    ]
+  }
+]

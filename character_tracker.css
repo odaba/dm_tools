@@ -1,0 +1,32 @@
+ /* character_tracker.css
+  * Frankie
+  * version 1.6
+  * 16Mar2013
+
+  * 1.6
+  * update version to match char_tracker.htm
+  * add .data_editable
+  */
+
+.hidden { display: none; }
+
+div {
+  border: thin solid black;
+  padding-left: 10px; }
+
+.float_left {
+  float: left;
+  clear: left;
+  width: 45%; }
+
+.float_right {
+  float: right;
+  clear: right;
+  width: 45%; }
+
+.data_line div {
+  display: inline-block;
+  border: none; }
+.data_label,
+.data_editable,
+.data_info { width: 30%; }
